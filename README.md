@@ -20,3 +20,13 @@ sudo apt-get upgrade
 ```
 sudo apt-get install bridge-utils
 ```
+
+# Edit rc.local
+```
+sudo nano /etc/rc.local
+```
+
+# Restart 
+```
+sudo reboot now
+```
