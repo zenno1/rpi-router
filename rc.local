@@ -1,0 +1,19 @@
+# Enable bridge
+sudo brctl addbr br0
+sudo brctl stp br0 on
+
+sudo ifconfig eth0 0.0.0.0 down
+sudo ifconfig eth1 0.0.0.0 down
+
+# If we want to assign ip address to bridge
+#sudo ifconfig br0 [my-ip-address]  
+
+sudo brctl addif br0 eth0
+sudo brctl addif br0 eth1
+
+sudo ifconfig eth0 up
+sudo ifconfig eth1 up
+sudo ifconfig br0 up
+
+# If we want to add route to br0
+sudo ip route add default via [my-ip-address] dev br0
